@@ -18,7 +18,7 @@ function createMenu() {
     [1, 'processes', 'Processes / Services'],
     [1, 'software', 'Software'],
     [1, 'network', 'Network'],
-    [1, 'usb', 'USB'],
+    [1, 'usb', 'USB / Serial'],
     [1, 'thunderbold', 'Thunderbold'],
     [1, 'pci', 'PCI'],
     [1, 'wifi', 'Wifi'],

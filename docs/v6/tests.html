@@ -33,7 +33,7 @@
         <a href="."
           ><img class="logo float-left" src="../assets/logo.png" alt="logo">
           <div class="title float-left">systeminformation</div>
-          <div class="title-version float-left">v6.0.0-beta.6</div>
+          <div class="title-version float-left">v6.0.0-beta.8</div>
         </a>
         <div class="text float-right github">
           <a href="https://github.com/sebhildebrandt/systeminformation">View on Github <i class="fab fa-github"></i></a>
@@ -78,22 +78,23 @@ npm run test</code></pre>
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │  SYSTEMINFORMATION                                                                                         Version: 6.x.x  │
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  a ... Audio           i ... INET Latency       r ... Installed Software  1 ... NET Iface Default     ? ... Get Object     │
-│  b ... BIOS            I ... INET Check Site    s ... Services            2 ... NET Gateway Default   , ... All Static     │
-│  B ... Baseboard       j ... INET Public IP     S ... Shell               3 ... NET Interfaces        . ... All Dynamic    │
-│  C ... Chassis         J ... CPU Current Speed  t ... time                4 ... NET Stats             / ... All            │
-│  c ... CPU             k ... Camera             T ... CPU Temperature     5 ... NET Connections                            │
-│  d ... DiskLayout      K ... Keyboard           u ... USB                                                                  │
-│  D ... DiskIO          l ... CPU Current Load   U ... UUID                6 ... Docker Info                                │
-│  e ... Block Devices   L ... Full Load          v ... Versions            7 ... Docker Images                              │
-│  E ... Open Files      m ... Memory             V ... Virtual Box         8 ... Docker Container                           │
-│  f ... FS Size         M ... MEM Layout         w ... WIFI networks       9 ... Docker Cont Stats                          │
-│  F ... FS Stats        n ... NPU                W ... WIFI interfaces     0 ... Docker Cont Proc                           │
-│  A ... Displays        N ... NPM Packages       x ... WIFI connections    + ... Docker Volumes                             │
-│  g ... GPU             o ... OS Info            y ... System                                                               │
-│  G ... PCI             O ... Mouse              Y ... Battery                                                              │
-│  h ... Bluetooth       p ... Processes          z ... Printer                                                              │
-│  H ... Thunderbolt     P ... Process Load       Z ... Users               - ... SI lib version        q >>> QUIT           │
+│  a ... Audio           i ... INET Latency        s ... Services           1 ... NET Iface Default     ? ... Get Object     │
+│  b ... BIOS            I ... INET Check Site     S ... Shell              2 ... NET Gateway Default   , ... All Static     │
+│  B ... Baseboard       j ... INET Public IP      t ... time               3 ... NET Interfaces        . ... All Dynamic    │
+│  C ... Chassis         J ... CPU Current Speed   T ... CPU Temperature    4 ... NET Stats             / ... All            │
+│  c ... CPU             k ... Camera              u ... USB                5 ... NET Connections                            │
+│  * ... Fans            K ... Keyboard            U ... UUID                                                                │
+│  d ... DiskLayout      l ... CPU Current Load    v ... Versions           6 ... Docker Info                                │
+│  D ... DiskIO          L ... Full Load           V ... Virtual Box        7 ... Docker Images                              │
+│  e ... Block Devices   m ... Memory              w ... WIFI networks      8 ... Docker Container                           │
+│  E ... Open Files      M ... MEM Layout          W ... WIFI interfaces    9 ... Docker Cont Stats                          │
+│  f ... FS Size         n ... NPU                 x ... WIFI connections   0 ... Docker Cont Proc                           │
+│  F ... FS Stats        N ... NPM Packages        X ... Serial Ports       + ... Docker Volumes                             │
+│  A ... Displays        o ... OS Info             y ... System                                                              │
+│  g ... GPU             O ... Mouse               Y ... Battery                                                             │
+│  G ... PCI             p ... Processes           z ... Printer                                                             │
+│  h ... Bluetooth       P ... Process Load        Z ... Users                                                               │
+│  H ... Thunderbolt     r ... Installed Software  - ... SI lib version                                 q >>> QUIT           │
 └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘</code></pre>
                   <p><span class="bold">Press q</span> to exit the test suite</p>
                   <p>Here a sample output for the e.g. <span class="bold">c ... CPU</span></p>
@@ -116,7 +117,7 @@ npm run test</code></pre>
   cores: 8,
   physicalCores: 4,
   performanceCores: 0,
-  efficiencyCores: 0,  
+  efficiencyCores: 0,
   processors: 1,
   socket: '',
   flags: 'fpu vme de pse tsc ...',

@@ -27,7 +27,7 @@
         <a href="."
           ><img class="logo float-left" src="../assets/logo.png" alt="logo">
           <div class="title float-left">systeminformation</div>
-          <div class="title-version float-left">v6.0.0-beta.6</div>
+          <div class="title-version float-left">v6.0.0-beta.8</div>
         </a>
         <div class="text float-right github">
           <a href="https://github.com/sebhildebrandt/systeminformation">View on Github <i class="fab fa-github"></i></a>
@@ -64,6 +64,11 @@
                     <li><span class="code">gpu()</span> graphics controllers (replaces the controllers part of <span class="code">graphics()</span>)</li>
                     <li><span class="code">displays()</span> monitors / displays (replaces the displays part of <span class="code">graphics()</span>)</li>
                     <li><span class="code">inetPublicIp()</span> public IPv4 / IPv6 address (#731)</li>
+                    <li>
+                      <span class="code">serialPorts()</span>
+                      detected serial / COM ports incl. USB adapters (<span class="code">device</span>, <span class="code">name</span>, <span class="code">manufacturer</span>, <span class="code">serialNumber</span>, <span class="code">vendorId</span>,
+                      <span class="code">productId</span>, <span class="code">pnpId</span>, <span class="code">type</span>; Linux via sysfs, macOS via ioreg, Windows via <span class="code">Win32_PnPEntity</span>)
+                    </li>
                   </ul>
                   <h4>New Attributes</h4>
                   <ul>
