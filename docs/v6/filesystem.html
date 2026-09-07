@@ -33,7 +33,7 @@
         <a href="."
           ><img class="logo float-left" src="../assets/logo.png" alt="logo">
           <div class="title float-left">systeminformation</div>
-          <div class="title-version float-left">v6.0.0-beta.8</div>
+          <div class="title-version float-left">v6.0.0-beta.10</div>
         </a>
         <div class="text float-right github">
           <a href="https://github.com/sebhildebrandt/systeminformation">View on Github <i class="fab fa-github"></i></a>
@@ -539,7 +539,7 @@ si.blockDevices().then(data => console.log(data));</code></pre>
                         <td>X</td>
                         <td>X</td>
                         <td></td>
-                        <td>read IO per sec (* see notes)</td>
+                        <td>read IO operations per sec, not bytes (* see notes)</td>
                       </tr>
                       <tr>
                         <td></td>
@@ -549,7 +549,7 @@ si.blockDevices().then(data => console.log(data));</code></pre>
                         <td>X</td>
                         <td>X</td>
                         <td></td>
-                        <td>write IO per sec (* see notes)</td>
+                        <td>write IO operations per sec, not bytes (* see notes)</td>
                       </tr>
                       <tr>
                         <td></td>
@@ -559,7 +559,7 @@ si.blockDevices().then(data => console.log(data));</code></pre>
                         <td>X</td>
                         <td>X</td>
                         <td></td>
-                        <td>total IO per sec (* see notes)</td>
+                        <td>total IO operations per sec, not bytes (* see notes)</td>
                       </tr>
                       <tr>
                         <td></td>
@@ -569,7 +569,7 @@ si.blockDevices().then(data => console.log(data));</code></pre>
                         <td></td>
                         <td>X</td>
                         <td></td>
-                        <td>read IO request time</td>
+                        <td>read IO request time in ms during the interval, null on the first call</td>
                       </tr>
                       <tr>
                         <td></td>
@@ -579,7 +579,7 @@ si.blockDevices().then(data => console.log(data));</code></pre>
                         <td></td>
                         <td>X</td>
                         <td></td>
-                        <td>write IO request time</td>
+                        <td>write IO request time in ms during the interval, null on the first call</td>
                       </tr>
                       <tr>
                         <td></td>
@@ -589,7 +589,7 @@ si.blockDevices().then(data => console.log(data));</code></pre>
                         <td></td>
                         <td>X</td>
                         <td></td>
-                        <td>total IO request time</td>
+                        <td>total IO request time in ms during the interval, null on the first call</td>
                       </tr>
                       <tr>
                         <td></td>

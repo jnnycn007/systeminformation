@@ -33,7 +33,7 @@
         <a href="."
           ><img class="logo float-left" src="../assets/logo.png" alt="logo">
           <div class="title float-left">systeminformation</div>
-          <div class="title-version float-left">v6.0.0-beta.8</div>
+          <div class="title-version float-left">v6.0.0-beta.10</div>
         </a>
         <div class="text float-right github">
           <a href="https://github.com/sebhildebrandt/systeminformation">View on Github <i class="fab fa-github"></i></a>
@@ -143,6 +143,16 @@
                     </tr>
                     <tr>
                       <td></td>
+                      <td>currentLoadIowait</td>
+                      <td>X</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>CPU load waiting for IO in % (Linux only, 0 elsewhere)</td>
+                    </tr>
+                    <tr>
+                      <td></td>
                       <td>currentLoadIrq</td>
                       <td>X</td>
                       <td>X</td>
@@ -205,6 +215,7 @@ si.currentLoad().then(data => console.log(data));</code></pre>
   currentLoadSystem: 1.73053152039555,
   currentLoadNice: 0,
   currentLoadIdle: 95.67367119901112,
+  currentLoadIowait: 0.4213728191,
   currentLoadIrq: 0,
   rawCurrentLoad: 350,
   rawCurrentLoadUser: 210,

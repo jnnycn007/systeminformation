@@ -27,7 +27,7 @@
         <a href="."
           ><img class="logo float-left" src="../assets/logo.png" alt="logo">
           <div class="title float-left">systeminformation</div>
-          <div class="title-version float-left">v6.0.0-beta.8</div>
+          <div class="title-version float-left">v6.0.0-beta.10</div>
         </a>
         <div class="text float-right github">
           <a href="https://github.com/sebhildebrandt/systeminformation">View on Github <i class="fab fa-github"></i></a>
@@ -95,6 +95,11 @@
                     <li><span class="code">services()</span> added <span class="code">lastChanged</span> (Linux/systemd: date of the last state change - service start when running, service stop otherwise; macOS: start time of the service processes, #886)</li>
                     <li><span class="code">processes()</span> added <span class="code">cpuTime</span> (absolute CPU time of the process itself in seconds, excluding already reaped children, #1007)</li>
                     <li><span class="code">processes()</span> now reports zombie processes with their plain name instead of <span class="code">name] &lt;defunct&gt;</span></li>
+                    <li>
+                      <span class="code">currentLoad()</span>
+                      added <span class="code">currentLoadIowait</span> / <span class="code">rawCurrentLoadIowait</span> and per CPU <span class="code">loadIowait</span> / <span class="code">rawLoadIowait</span> (CPU time waiting for IO, the <span class="code">wa</span> value of
+                      <span class="code">top</span>) - Linux only, <span class="code">0</span> elsewhere (#965)
+                    </li>
                     <li><span class="code">versions()</span> added angular, cargo, composer, curl, dockerCompose, go, gradle, herd, laravel, podman, rails, ruby, rust, sqlite3, vim, vue</li>
                   </ul>
                   <h4>Extended Windows Support</h4>
@@ -109,6 +114,16 @@
                   </ul>
                   <h4>Fixes (open version 5 issues resolved in version 6)</h4>
                   <ul>
+                    <li>
+                      <span class="code">fsSize()</span>
+                      the file system <span class="code">type</span> on macOS is now read from <span class="code">mount</span> instead of being guessed from <span class="code">diskutil</span> - the guess could only ever produce <span class="code">APFS</span>, <span class="code">HFS</span> or
+                      <span class="code">NFS</span>, so APFS volumes were reported as <span class="code">HFS</span> and zfs, exfat, msdos or smbfs were never recognised at all. This also makes the ZFS correction work on macOS (#1017)
+                    </li>
+                    <li>
+                      <span class="code">fsSize()</span>
+                      ZFS datasets now report the hierarchical usage from <span class="code">zfs list</span> - df and statfs only know what a dataset references itself, so a parent holding its data in child datasets was shown as almost empty (#1017) - note that <span class="code">used</span> then
+                      includes child datasets and snapshots, exactly like <span class="code">zfs list</span>, so it must not be summed across nested datasets
+                    </li>
                     <li><span class="code">displays()</span> EDID parsing with multiple monitors - all displays reported the first monitor's model, resolution and size (Linux, #997)</li>
                     <li><span class="code">displays()</span> display positions (<span class="code">positionX</span> / <span class="code">positionY</span>) are now parsed from xrandr (Linux, #866)</li>
                     <li><span class="code">displays()</span> per-display refresh rate instead of copying the primary monitor's rate to all displays (Windows, #853)</li>
@@ -216,6 +231,15 @@
                   <h4>Modular Imports (new)</h4>
                   <p>The whole library, a single operating system, or a single function can now be imported individually:</p>
                   <ul>
+                    <li>
+                      <span class="code">disksIO()</span> <span class="code">rWaitTime</span>, <span class="code">wWaitTime</span> and <span class="code">tWaitTime</span> now report the wait time of the last interval in ms instead of the total since boot, and are <span class="code">null</span> on
+                      the first call - same convention as <span class="code">rIO_sec</span> (#1025)
+                    </li>
+                    <li>
+                      <span class="code">currentLoad()</span>
+                      on Linux now counts iowait ticks in the denominator, which <span class="code">os.cpus()</span> drops entirely - <span class="code">currentLoadIdle</span> is now lower by exactly the iowait share while <span class="code">currentLoad</span> is almost unchanged, and the categories
+                      add up to 100% again
+                    </li>
                     <li><span class="code">require('systeminformation')</span> - whole library (all functions, all platforms)</li>
                     <li><span class="code">require('systeminformation/cpu')</span> - a single function (platform detected at runtime)</li>
                     <li><span class="code">require('systeminformation/linux')</span> - a whole operating system (<span class="code">/darwin</span>, <span class="code">/windows</span>, <span class="code">/bsd</span>, <span class="code">/sun</span>)</li>
