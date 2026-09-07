@@ -93,7 +93,8 @@
                     <li><span class="code">os()</span> added <span class="code">installDate</span>, <span class="code">displayServer</span></li>
                     <li><span class="code">services()</span> added <span class="code">startmode</span> on Linux (systemd <span class="code">UnitFileState</span>: enabled, disabled, static, ..., previously Windows only)</li>
                     <li><span class="code">services()</span> added <span class="code">lastChanged</span> (Linux/systemd: date of the last state change - service start when running, service stop otherwise; macOS: start time of the service processes, #886)</li>
-                    <li><span class="code">processes()</span> added <span class="code">cpuTime</span> (absolute CPU time of the process itself in seconds, excluding already reaped children - Linux, macOS and Windows, <span class="code">null</span> on BSD / SunOS, #1007)</li>
+                    <li><span class="code">processes()</span> added <span class="code">cpuTime</span> (absolute CPU time of the process itself in seconds, excluding already reaped children, #1007)</li>
+                    <li><span class="code">processes()</span> now reports zombie processes with their plain name instead of <span class="code">name] &lt;defunct&gt;</span></li>
                     <li><span class="code">versions()</span> added angular, cargo, composer, curl, dockerCompose, go, gradle, herd, laravel, podman, rails, ruby, rust, sqlite3, vim, vue</li>
                   </ul>
                   <h4>Extended Windows Support</h4>
