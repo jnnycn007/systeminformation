@@ -390,6 +390,16 @@ si.fullLoad().then(data => console.log(data));</code></pre>
                     </tr>
                     <tr>
                       <td></td>
+                      <td>...[0].cpuTime</td>
+                      <td>X</td>
+                      <td></td>
+                      <td>X</td>
+                      <td>X</td>
+                      <td></td>
+                      <td>process cpu time in seconds (own, without reaped children); null if not available</td>
+                    </tr>
+                    <tr>
+                      <td></td>
                       <td>...[0].mem</td>
                       <td>X</td>
                       <td>X</td>
@@ -529,6 +539,7 @@ si.processes().then(data => console.log(data));</code></pre>
       cpu: 0.04504576931569955,
       cpuu: 0.04084113255431208,
       cpus: 0.00420463676138747,
+      cpuTime: 12.34,
       mem: 0,
       priority: 19,
       memVsz: 166144,

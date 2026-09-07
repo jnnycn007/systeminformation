@@ -91,6 +91,7 @@ For major (breaking) changes - **version 4, 3 and 2** - see end of page.
 
 | Version | Date       | Comment                                                                                             |
 | ------- | ---------- | --------------------------------------------------------------------------------------------------- |
+| 5.33.9  | 2026-09-07 | `processes()` fix parsing cpu values, updated docs                                                  |
 | 5.33.8  | 2026-09-02 | `codebase` refactoring, hardening                                                                   |
 | 5.33.7  | 2026-09-01 | `audio()` fix - onboard sound cards, e.g. Raspberry Pi (linux)                                      |
 | 5.33.6  | 2026-08-29 | `audio()` fallback to ALSA (/proc/asound) (linux)                                                   |
